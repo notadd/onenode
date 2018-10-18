@@ -15,7 +15,11 @@ const proxy = Fastify({
 })
 
 proxy.register(require('fastify-reply-from'), {
-  base: 'http://localhost:3001/'
+  base: 'http://localhost:3001/',
+  undici: {
+    connections: 100,
+    pipelining: 10
+  }
 })
 
 proxy.get('/', (request, reply) => {
