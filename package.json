@@ -1,0 +1,31 @@
+{
+  "name": "onenode",
+  "version": "1.0.0",
+  "description": "one node http server",
+  "main": "./src/onenode.js",
+  "scripts": {
+    "test": "vows test/* --spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notadd/onenode.git"
+  },
+  "keywords": [
+    "http",
+    "server",
+    "node",
+    "cli"
+  ],
+  "author": "Panda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/notadd/onenode/issues"
+  },
+  "homepage": "https://github.com/notadd/onenode#readme",
+  "bin": {
+    "onenode": "./bin/onenode"
+  },
+  "devDependencies": {
+    "vows": "^0.8.2"
+  }
+}
