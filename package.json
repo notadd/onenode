@@ -4,7 +4,7 @@
   "description": "one node http server",
   "main": "./src/onenode.js",
   "scripts": {
-    "test": "vows test/* --spec"
+    "test": "xo"
   },
   "repository": {
     "type": "git",
@@ -22,11 +22,10 @@
     "url": "https://github.com/notadd/onenode/issues"
   },
   "homepage": "https://github.com/notadd/onenode#readme",
-  "bin": {
-    "onenode": "./bin/onenode"
-  },
+  "bin": "cli.js",
   "devDependencies": {
-    "vows": "^0.8.2"
+    "ava": "^1.0.0-rc.1",
+    "xo": "^0.23.0"
   },
   "dependencies": {
     "chalk": "^2.4.1",

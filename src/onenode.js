@@ -1,39 +1,39 @@
-'use strict'
+'use strict';
 
-const Fastify = require('fastify')
+const fastify = require('fastify');
 
-const target = Fastify({
-  logger: true
-})
+const target = fastify({
+	logger: true
+});
 
 target.get('/', (request, reply) => {
-  reply.send('hello world')
-})
+	reply.send('hello world');
+});
 
-const proxy = Fastify({
-  logger: true
-})
+const proxy = fastify({
+	logger: true
+});
 
 proxy.register(require('fastify-reply-from'), {
-  base: 'http://localhost:3001/',
-  undici: {
-    connections: 100,
-    pipelining: 10
-  }
-})
+	base: 'http://localhost:3001/',
+	undici: {
+		connections: 100,
+		pipelining: 10
+	}
+});
 
 proxy.get('/', (request, reply) => {
-  reply.from('/')
-})
+	reply.from('/');
+});
 
-target.listen(3001, (err) => {
-  if (err) {
-    throw err
-  }
+target.listen(3001, err => {
+	if (err) {
+		throw err;
+	}
 
-  proxy.listen(3000, (err) => {
-    if (err) {
-      throw err
-    }
-  })
-})
+	proxy.listen(3000, err => {
+		if (err) {
+			throw err;
+		}
+	});
+});
