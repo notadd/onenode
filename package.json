@@ -31,7 +31,7 @@
     "chalk": "^2.4.1",
     "commander": "^2.19.0",
     "download-git-repo": "^1.1.0",
-    "fastify": "^1.12.1",
+    "fastify": "^2.0.0",
     "fastify-reply-from": "^0.6.0",
     "handlebars": "^4.0.12",
     "inquirer": "^6.2.0",
